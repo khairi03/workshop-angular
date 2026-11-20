@@ -1,0 +1,15 @@
+<section class="card" id="notifications">
+  <div class="icon">🔔</div>
+  <div>
+    <h2>Zone de notifications</h2>
+    <p>Vous avez {{ notifications().length }} notifications</p>
+    <button (click)="showNotifications()">{{ bntTxt() }}</button>
+    @if(show()){
+      <ul>
+        @for(item of notifications(); track item){
+          <li>{{item.message}}</li>
+        }
+      </ul>
+    }
+  </div>
+</section>
