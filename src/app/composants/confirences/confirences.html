@@ -1,1 +1,26 @@
-<p>confirences works!</p>
+<section class="card" id="conference-list">
+  <div class="icon">🎤</div>
+  <div class="content">
+    <h2>Conférences à venir</h2>
+
+    @if (conferences().length === 0) {
+      <p>Aucune conférence enregistrée.</p>
+    } @else {
+      <input type="text" placeholder="Rechercher par titre..." [(ngModel)]="searchTerm" />
+
+      @for (c of upcoming(); track c.id) {
+        <div class="conf">
+          <h3>{{ c.title | uppercase }}</h3>
+          <p>{{ c.description }}</p>
+          <p>{{ c.date | date: 'fullDate' }} - {{ c.place }}</p>
+          <p>Participants : {{ c.nbParticipants }} / {{ c.maxParticipants }}</p>
+          <button [class]="buttonClass(c)" [disabled]="remaining(c) === 0" (click)="register(c.id)">
+            S'inscrire
+          </button>
+        </div>
+      } @empty {
+        <p>Aucune conférence ne correspond à votre recherche.</p>
+      }
+    }
+  </div>
+</section>

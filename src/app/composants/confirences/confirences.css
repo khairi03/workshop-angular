@@ -1,0 +1,21 @@
+.card {
+  background: white;
+  border-left: 5px solid #2f6fb4;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+.icon { width: 58px; height: 58px; flex: 0 0 58px; display: grid; place-items: center;
+  border-radius: 50%; background: #eaf2fb; font-size: 28px; }
+.content { flex: 1; }
+h2 { margin-top: 0; color: #173b67; }
+input { padding: 8px; width: 100%; max-width: 320px; margin-bottom: 12px; }
+.conf { border: 1px solid #e3e8ef; border-radius: 10px; padding: 14px; margin-bottom: 12px; }
+.conf h3 { margin: 0 0 6px; color: #173b67; }
+button { color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+.btn-green  { background: #28a745; }
+.btn-orange { background: #fd7e14; }
+.btn-red    { background: #dc3545; cursor: not-allowed; }
